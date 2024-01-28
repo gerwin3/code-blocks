@@ -1,8 +1,9 @@
-# Code Strategies
+# Code Blocks
 
-Personal repository of common strategies that I keep running into over and over again.
+Personal repository of common building blocks that I keep running into over and
+over again.
 
-Soon with reference implementations (maybe in multiple languagues).
+TODO: Soon with reference implementations (maybe in multiple languagues).
 
 ### Service
 
@@ -11,7 +12,10 @@ inputs to process them asynchronously with respect to the caller.
 
 ### Service Manager
 
-... TODO
+A service manager is a structure that manages multiple services instances of the
+same service. For example: A service manager that manages services for each
+multiple incoming data streams. Each service instance is an instantiation of a
+service.
 
 ### Handler
 
@@ -46,14 +50,17 @@ used in the context of databases, or internet APIs.
 
 ### Format Parser
 
-A structure ...
+A structure that takes binary or text input and turns it into a sturctured
+format.
 
-Hard to do correctly since they often have the property that whilst building the
-representation their internal state is incomplete and unstable.
+Note: Hard to do correctly since they often have the property that whilst
+building the representation their internal state is incomplete and unstable.
 
 [relate to representation]
 
 ### Format Writer
+
+The opposite of a format parser.
 
 Often unnecessary since they can be directly implemented as function on their
 representation object.
@@ -62,4 +69,8 @@ representation object.
 
 ### Buffered
 
-TODO: not sure
+A structure that provides and interface for adding (pushing) objects, but
+internally buffers those items before forwarding it further. For example: Some
+object that takes video frames as input, but instead of writing them to a file,
+buffers them to a fixed (or configurable) amount, and only then writes them as a
+batch.
